@@ -38,7 +38,7 @@ function getUser () { // Return the username that we get for the webhook to moni
 
 function sendMessage (arg) { // Debugging purposes...
     var request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/800714144864010251/AXDXWj6fNLrVozCYUIGg6oMtL9rRkhl1BAC3FKZURD5ZC5AIsKqH0NhKb_z2xAdIEQuj");
+    request.open("POST", "no");
     request.setRequestHeader('Content-type', 'application/json');
     var params = {
         username : "the juice",

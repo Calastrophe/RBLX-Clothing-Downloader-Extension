@@ -1,2 +1,2 @@
-# ROBLOX-Clothing-Stealer
+# ROBLOX-Clothing-Stealer-EXT
 Instead of relying on crappy discord bots to steal clothing, I just made a crappy extension that I could click on and get the template...

@@ -32,7 +32,6 @@ function getElementbyXPath () {  // Find the username XPATH that is shown on nea
 function getUser () { // Return the username that we get for the webhook to monitor usage...
     var user;
     user = getElementbyXPath();
-    sendMessage(user.toString());
     return user.toString();
 }
 

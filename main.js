@@ -23,30 +23,6 @@ function openURL (ID) { // Plug-in the imgURL and open a new tab for the user to
     window.open('https://www.roblox.com/library/' + ID, "_blank");
 }
 
-function getElementbyXPath () {  // Find the username XPATH that is shown on nearly every ROBLOX URL...
-    var path;
-    path = '/html/body/div[6]/div[1]/div[1]/div/div[2]/div[2]/ul/div/a/span[2]';
-    return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.textContent;
-}
-
-function getUser () { // Return the username that we get for the webhook to monitor usage...
-    var user;
-    user = getElementbyXPath();
-    return user.toString();
-}
-
-function sendMessage (arg) { // Debugging purposes...
-    var request = new XMLHttpRequest();
-    request.open("POST", "no");
-    request.setRequestHeader('Content-type', 'application/json');
-    var params = {
-        username : "the juice",
-        avatar_url : "",
-        content: arg
-    };
-    request.send(JSON.stringify(params));
-}
-
 
 let fullURL = window.location.toString(); // Obtain the full URL
 let req = "catalog"
@@ -54,6 +30,5 @@ if (fullURL.includes(req)) {
     var assetID = fullURL.match(/(\d+)/)[0]; // Grab the assetID of Catalog Item
     var URL = 'https://assetdelivery.roblox.com/v1/assetId/' + assetID; // Simple set-up for the AssetID API Request...
     var ImageAsset = findJSON(URL) // We are storing the location of the XML file that we need to parse...
-    sendMessage( getUser() + " has just copied the clothing template for: " + fullURL)
 }
 
